@@ -1,2 +1,4 @@
+.env
 logs
 tasks/__pycache__
+dags/__pycache__
