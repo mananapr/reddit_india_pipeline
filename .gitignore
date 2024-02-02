@@ -2,3 +2,10 @@
 logs
 tasks/__pycache__
 dags/__pycache__
+tasks/configuration.env
+terraform/.terraform/*
+terraform/*.tfstate
+terraform/*.terraform.lock.hcl
+terraform/*.tfstate.*
+terraform/*.tfvars
+terraform/*.tfvars.json
