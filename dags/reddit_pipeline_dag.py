@@ -20,12 +20,24 @@ with DAG(
         bash_command="python /opt/airflow/tasks/scraper.py",
     )
 
+    push_bronze = BashOperator(
+        task_id="push_bronze",
+        bash_command="python /opt/airflow/tasks/s3_push.py bronze",
+    )
+
     validate_sanitize_bronze = BashOperator(
         task_id="validate_sanitize_bronze",
         bash_command="python /opt/airflow/tasks/validate_and_transform.py",
     )
 
+    push_silver = BashOperator(
+        task_id="push_silver",
+        bash_command="python /opt/airflow/tasks/s3_push.py silver",
+    )
+
 (
     scrape_reddit
+    >> push_bronze
     >> validate_sanitize_bronze
+    >> push_silver
 )
