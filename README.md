@@ -2,6 +2,8 @@
 Pipeline that scrapes data from [r/india](https://old.reddit.com/r/india) subreddit and finalizes data for the visual layer.
 
 ## Architecture
+![flowchart](flowchart.png)
+
 - **Infra Provisioning:** Terraform (with AWS)
 - **Containerization:** Docker
 - **Orchestration:** Airflow
