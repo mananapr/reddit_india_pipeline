@@ -24,6 +24,8 @@ def sanitize_data(data: List[dict]) -> pd.DataFrame:
     df['self_url'] = df['self_url'].map(lambda x: f'https://old.reddit.com{x}' if x[0] == '/' else x)
     df['user_link'] = df['user_link'].map(lambda x: f'https://old.reddit.com{x}' if x[0] == '/' else x)
 
+    ## Trim URL to 500 characters
+    df['url'] = df['url'].str.slice(stop=500)
 
     ## Update timestamp format to '%Y-%m-%d %H:%M:%S'
     df['create_date'] = df['create_date'].map(lambda x: datetime.datetime.strptime(x,'%Y-%m-%dT%H:%M:%S%z').strftime('%Y-%m-%d %H:%M:%S'))
