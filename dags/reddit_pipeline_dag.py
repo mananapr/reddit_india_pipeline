@@ -35,9 +35,15 @@ with DAG(
         bash_command="python /opt/airflow/tasks/s3_push.py silver",
     )
 
+    push_redshift = BashOperator(
+        task_id="push_redshift",
+        bash_command="python /opt/airflow/tasks/redshift_push.py",
+    )
+
 (
     scrape_reddit
     >> push_bronze
     >> validate_sanitize_bronze
     >> push_silver
+    >> push_redshift
 )
