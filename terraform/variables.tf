@@ -14,3 +14,8 @@ variable "versioning" {
   type    = string
   default = "Enabled"
 }
+
+variable "redshift_password" {
+  description = "Redshift Cluster Password"
+  type        = string
+}
