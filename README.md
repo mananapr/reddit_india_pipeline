@@ -7,7 +7,7 @@ Pipeline that scrapes data from [r/india](https://old.reddit.com/r/india) subred
 - **Infra Provisioning:** Terraform (with AWS)
 - **Containerization:** Docker
 - **Orchestration:** Airflow
-- **Visual Layer:** Not sure yet, maybe Metabase
+- **Visual Layer:** Metabase
 
 ### DAG Tasks:
 1. Scrape data from r/india to generate bronze data
