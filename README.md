@@ -24,3 +24,7 @@ Setup and intial execution is handled by the Makefile.
 1. `make init`: Intializes Airflow (User setup, DB migrations)
 2. `make infra`: Sets up the AWS Infrastructure (S3, Redshift, Budget) and creates the `configuration.env` file with the secrets
 3. `make up`: Runs Airflow
+
+
+## Dashboard
+![dashboard](dashboard.jpg)
