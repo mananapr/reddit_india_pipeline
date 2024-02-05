@@ -29,7 +29,8 @@ class Scraper:
         posts = [str(x) for x in soup.select('div#siteTable > div[data-promoted]') if 'alb.reddit.com' not in str(x)]
         posts_html = ''
         for p in posts:
-            posts_html += p
+            if '[deleted]' not in p:
+                posts_html += p
         soup = BeautifulSoup(posts_html, 'html.parser')
 
         ## Extract post attributes and create Pandas DF
